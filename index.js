@@ -20,34 +20,4 @@ next.addEventListener("click", () => {
   rotateCarousel();
 })
 
-$(document).ready(function () {
-  // var test = $('#map-container').hasClass('mapit');
-  var test = window.google != undefined;
 
-  $('.ismap').click(function () {
-    console.log("Map is clicked");
-    $gmap = true;
-    $mapit = false;
-
-    yepnope({
-      test: test,
-      yep: {
-        "alreadyLoaded": "timeout=1!"
-      },
-      nope: {
-        "googleMap": "https://maps.google.com/maps/api/js?v=3&sensor=true&callback=initMap"
-      },
-      callback: {
-        "alreadyLoaded": function () {
-          console.log("Already Loaded");
-          initMap();
-        }
-      },
-      complete: function (url, result, key) {
-        console.log("Complete");
-      }
-    });
-    console.log("I should run before YepNope");
-  });
-
-});
